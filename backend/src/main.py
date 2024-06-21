@@ -4,8 +4,8 @@ from typing import AsyncGenerator
 from fastapi import FastAPI
 
 from .api.views import router as api_router
+from .connect_4.settings import settings
 from .db.utils import get_mongodb_client
-from .pet_project.settings import settings
 
 
 @asynccontextmanager
