@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+
+import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { PublicEnvScript } from 'next-runtime-env';
 import ThemeButton from "@/components/theme-button";
 import ThemeProviderWrapper from "./providers";
 
@@ -18,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={'${inter.className} h-full'}>
+      <head>
+          <PublicEnvScript />
+      </head>
+      <body className={`${inter.className} h-full`}>
         <ThemeProviderWrapper>
           <div className="h-full bg-slate-200 dark:bg-slate-900">
             <ThemeButton />
