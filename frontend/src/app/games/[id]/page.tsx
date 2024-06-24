@@ -3,7 +3,7 @@
 import { BACKEND_API_BASE_URL, BACKEND_WS_BASE_URL } from "@/app/constants";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-import { PetProjectButton } from "@/components/buttons";
+import { Connect4Button } from "@/components/buttons";
 import { getPlayerNameFromLocalStorage } from "@/utils/localStorageUtils";
 
 interface MoveData {
@@ -226,7 +226,7 @@ function GameInfo({ gameData, setGameData, playerName, }: { gameData: GameData, 
             {(!humanFinishedAt || replayInProgress) && <p> Move #{gameData.move_number} </p>}
             {humanFinishedAt && (
                 <div className="mx-auto mt-2 w-1/2 sm:w-1/3">
-                    <PetProjectButton
+                    <Connect4Button
                         label="Replay Game"
                         onClickHandler={handleReplayGame}
                     />
